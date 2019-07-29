@@ -4,6 +4,37 @@ namespace OOPBankingProject {
     class Program {
         static void Main(string[] args) {
 
+            Savings sav1 = new Savings();
+            sav1.Number = "SAV001";
+            sav1.Name = "Savings1";
+
+
+            Account acct = new Account();
+            acct.Number = "1001";
+            acct.Name = "Test Account";
+            acct.Deposit(100);
+            decimal balance = acct.GetBalance();
+            Console.WriteLine($"Current balance is: {balance}.");
+
+
+           bool ItWorked = acct.TransferTo(sav1, 50);
+            decimal sav1bal = sav1.GetBalance();
+            Console.WriteLine($"Current balance is: {sav1.GetBalance()}.");
+            Console.WriteLine($"Current balance is: {acct.GetBalance()}.");
+
+            Console.WriteLine(sav1.Print());
+            Console.WriteLine(acct.Print());
+
+                Account[] accounts = new Account[] { sav1, acct };
+            foreach(Account accts in accounts) {
+                Console.WriteLine(accts.Print());
+
+            }
+
+
+
+
+            /*
             Savings sav = new Savings();
             sav.Number = "1002";
             sav.Name = "Savings Test";
@@ -29,6 +60,38 @@ namespace OOPBankingProject {
             sav.Withdraw(-20);
             savbal = sav.GetBalance();
             Console.WriteLine($"Current balance is {savbal}.");
+            */
+
+
+
+            //CHECK ON THIS AND REDO IT
+            /*
+            MoneyMarket mm = new MoneyMarket();
+            mm.Number = "1003";
+            mm.Name = "Money Market Account";
+            mm.IntRateMM = 0.03;
+
+            decimal mmbal = mm.GetBalance();
+            decimal InterestToBePaidMM = mm.MMCalcIntRate(12);
+
+            mm.Deposit(10000);
+
+            Console.WriteLine("Current balance is {");
+            */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -37,13 +100,6 @@ namespace OOPBankingProject {
 
 
             /*
-            Account acct = new Account();
-            acct.Number = "1001";
-            acct.Name = "Test Account";
-            acct.Deposit(100);
-            decimal balance = acct.GetBalance();
-            Console.WriteLine($"Current balance is: {balance}. (Should be 100).");
-
             acct.Withdraw(10);
             balance = acct.GetBalance();
             Console.WriteLine($"Current balance is: {balance}. (Should be 90).");
@@ -59,8 +115,8 @@ namespace OOPBankingProject {
             acct.Withdraw(300);
             balance = acct.GetBalance();
             Console.WriteLine($"Current balance is: {balance}. (Should be 90.)");
-            */
-
+            
+    */
         }
     }
 }

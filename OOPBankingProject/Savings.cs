@@ -6,6 +6,10 @@ namespace OOPBankingProject {
     public class Savings : Account {
 
         public double IntRate { get; set; } = 0.03;
+
+        public override string Print() {
+            return base.Print() + $" | {IntRate}";
+        }
         
         public void PayInterest (decimal AmountofInterest) {
             this.Deposit(AmountofInterest);
