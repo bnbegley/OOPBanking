@@ -7,6 +7,14 @@ namespace OOPBankingProject {
 
         public double IntRate { get; set; } = 0.03;
 
+        public bool ChangeRate(double chgRate) {
+            if ((this.IntRate + chgRate) <0) {
+                return false;
+            }
+            this.IntRate += chgRate;
+            return true;
+        }
+
         public override string Print() {
             return base.Print() + $" | {IntRate}";
         }

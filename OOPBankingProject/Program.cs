@@ -4,6 +4,20 @@ namespace OOPBankingProject {
     class Program {
         static void Main(string[] args) {
 
+
+            Checking check1 = new Checking();
+            check1.Number = "CHECKING 1001";
+            check1.Name = "College Checking";
+
+            check1.Deposit(4000);
+            check1.Pay(531, 300);
+            decimal chkbal = check1.GetBalance();
+
+            Console.WriteLine($"The total in College Checking is {chkbal}.");
+
+
+
+
             Savings sav1 = new Savings();
             sav1.Number = "SAV001";
             sav1.Name = "Savings1";
@@ -14,18 +28,15 @@ namespace OOPBankingProject {
             acct.Name = "Test Account";
             acct.Deposit(100);
             decimal balance = acct.GetBalance();
-            Console.WriteLine($"Current balance is: {balance}.");
 
 
            bool ItWorked = acct.TransferTo(sav1, 50);
             decimal sav1bal = sav1.GetBalance();
-            Console.WriteLine($"Current balance is: {sav1.GetBalance()}.");
-            Console.WriteLine($"Current balance is: {acct.GetBalance()}.");
 
-            Console.WriteLine(sav1.Print());
-            Console.WriteLine(acct.Print());
+           // Console.WriteLine(sav1.Print());
+           // Console.WriteLine(acct.Print());
 
-                Account[] accounts = new Account[] { sav1, acct };
+                Account[] accounts = new Account[] { sav1, acct, check1 };
             foreach(Account accts in accounts) {
                 Console.WriteLine(accts.Print());
 

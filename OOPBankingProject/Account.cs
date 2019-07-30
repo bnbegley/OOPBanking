@@ -12,7 +12,7 @@ namespace OOPBankingProject {
         public bool IsActive { get; set; } = true;
 
         public virtual string Print() {
-            return $"{this.Number} | {this.Balance} | {this.Name}.";
+            return $"{this.Number} | {this.Balance} | {this.Name}";
         }
    
         public bool TransferTo(Account ToAccount, decimal Amount) {
